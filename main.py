@@ -1,4 +1,7 @@
-def add(self, numbers=""):
+class StringCalculator():
+
+
+   def add(self, numbers=""):
     # To fetch all the negatives in the string the multiple negatives
     negativesList = []
 
