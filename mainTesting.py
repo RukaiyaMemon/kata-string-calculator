@@ -25,8 +25,12 @@ class StringCalculatorTestCase(unittest.TestCase):
         self.assertEqual(result9, 2005)
         result10 = self.stringCalc.add("1,999, 1000, 1001, 5")
         self.assertEqual(result10, 2005)
-
         result11 = self.stringCalc.add("1\n999, 1000, 5, 1010")
         self.assertEqual(result11, 2005)
         result12 = self.stringCalc.add("1,999, 1000\n1001, 5")
         self.assertEqual(result12, 2005)
+
+        result13 = self.stringCalc.add("//;\n1;2")
+        self.assertEqual(result13, 3)
+        result14 = self.stringCalc.add("//++\n1++2++3++4\n5\n6++7++1001++a++c++")
+        self.assertEqual(result14, 32)
