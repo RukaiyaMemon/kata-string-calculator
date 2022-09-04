@@ -1,6 +1,8 @@
 class StringCalculator():
 
     def add(self, numbers=""):
+        # To fetch all the negatives in the string the multiple negatives
+        negativesList = []
 
         # if string is empty
         if len(numbers) == 0:
@@ -8,14 +10,12 @@ class StringCalculator():
         # if there is only number present in the string
         elif ',' not in numbers:
             return int(numbers)
-        # if more than one number is there in the string and seperated by delimeter '(,)'
+        # if more than one number is present in the string and seperated by delimeter 'comma(,)'
         else:
-
-            # adding all the alphabets in alphaList and getting the value corresponding to each of the alphabet using its index in alphaList
+            # adding all the alphabets in alphaList and getting the value corresponding to each alphabet using its index in alphaList
             alphaList = []
             for i in range(97, 123, 1):
                 alphaList.append(chr(i))
-
             # separating all the numbers or alphabets present in the string and creating a list from it
             numList = numbers.split(',')
             for key, val in enumerate(numList):
@@ -27,9 +27,13 @@ class StringCalculator():
                     val = alphaList.index(val) + 1
 
                 if val < 0:
-                    raise Exception("\"Negatives not allowed\" - " + str(val))
+                    negativesList.append(str(val))
 
-                # allocates the int value corresponding to the character present at that index
+                # allocates the int value corresponding to the character present at that particular index
                 numList[key] = val
 
-            return sum(numList)
+            if len(negativesList) == 0:
+                return sum(numList)
+            else:
+                negativesAll = ', '.join(negativesList)
+                raise Exception("\"Negatives not allowed\" - [" + negativesAll + "]")
