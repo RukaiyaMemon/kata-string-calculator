@@ -1,10 +1,12 @@
-                           The files added here is related to string calculator in python.
-
+-> The files added here is related to string calculator in python.
 -> The main.py file is committed one by one by checking the different requirements based on the increasing order of the questions/requirements given in the pdf
-
 -> All the commits/codes are checked or tested before commiting it.
-
 -> Every commit has its own requirements and that requirement is mentioned clearly in each commit message.
 
 -> Testing file : mainTesting.py
    Code file : main.py
+
+-> File has solution for all the 9 problems with their testing code.
+
+Note: Testing code is not present for the test cases where it was asked to raise an exception. But the code in the function handles the exceptions for those test cases.
+      Comments are written in every part of the code wherever it is required to make the code more understandable to anyone.
